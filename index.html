@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <link rel="shortcut icon" href="assets/img/favicon.png" type="image/png">
+  <link href="https://fonts.googleapis.com/css?family=PT+Sans:400,700&amp;subset=cyrillic" rel="stylesheet">
+  <link rel="stylesheet" href="assets/css/style.css">
+  <title>Document</title>
+</head>
+
+<body>
+
+  <!-- t.ly/Nw7GW -->
+  <!-- ссылка на репозиторий с коммитами -->
+  <!-- https://alecto.github.io/tinyone/ -->
+  <!-- готовый макет -->
+
+  <header class="header">
+    <!-- .header-menu.container  .header-slider.container -->
+    <div class="header-menu container">
+      <!-- .header-logo>img.header-logo__image+
+        strong.header-logo>strong.header-logo__title{tinyone} -->
+      <div class="header-logo">
+        <img src="assets/img/logo.png" alt="alt" class="header-logo__image">
+        <strong class="header-logo__title">tinyone</strong>
+      </div>
+
+      <nav class="header-navbar">
+        <!-- .header-navbar__hamburger>span*3 -->
+        <div class="header-navbar__hamburger">
+          <span></span>
+          <span></span>
+          <span></span>
+        </div>
+        <!-- ul.header-navbar__list>li.header-navbar__item>a.header-navbar__link продублировать 3 раза-->
+        <ul class="header-navbar__list">
+          <li class="header-navbar__item"><a href="#" class="header-navbar__link">Features</a></li>
+          <li class="header-navbar__item"><a href="#" class="header-navbar__link">Support</a></li>
+          <li class="header-navbar__item"><a href="#" class="header-navbar__link">Blog</a></li>
+        </ul>
+      </nav>
+
+    </div>
+    
+    <div class="header-slider container">
+      <!-- .slides>.slide*3>h1.slide__title+p.slide__subtitle+p.slide__description+.slide__image>img^ul.slide__brands>li>a>i.fa.fa-apple li 3 раза-->
+      <div class="slides">
+
+        <div class="slide active">
+          <h1 class="slide__title">Inspire your inspiration</h1>
+          <p class="slide__subtitle">Simple to use for your app, products showcase and your inspiration</p>
+          <p class="slide__description">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Praesent vitae eros
+            eget tellus tristique bibendum. Donec rutrum sed sem quis venenatis. Proin viverra risus a eros volutpat
+            tempor. In quis arcu et eros porta lobortis sit.</p>
+          <div class="slide__image"><img src="assets/img/slide-image-1.png" alt="alt"></div>
+          <ul class="slide__brands">
+            <li><a href="#"><i class="fa fa-apple"></i></a></li>
+            <li><a href="#"><i class="fa fa-android"></i></a></li>
+            <li><a href="#"><i class="fa fa-windows"></i></a></li>
+          </ul>
+        </div>
+
+        <div class="slide">
+          <h1 class="slide__title">Lorem ipsum dolor amet</h1>
+          <p class="slide__subtitle">Saepe aliquid obcaecati distinctio ad inventore voluptate porro</p>
+          <p class="slide__description">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Praesent vitae eros
+            eget tellus tristique bibendum. Donec rutrum sed sem quis venenatis. Proin viverra risus a eros volutpat
+            tempor. In quis arcu et eros porta lobortis sit.</p>
+          <div class="slide__image"><img src="assets/img/slide-image-2.png" alt="alt"></div>
+          <ul class="slide__brands">
+            <li><a href="#"><i class="fa fa-apple"></i></a></li>
+            <li><a href="#"><i class="fa fa-android"></i></a></li>
+            <li><a href="#"><i class="fa fa-windows"></i></a></li>
+          </ul>
+        </div>
+
+        <div class="slide">
+          <h1 class="slide__title">Eaque, consequatur dicta</h1>
+          <p class="slide__subtitle">Saepe aliquid obcaecati distinctio ad inventore voluptate porro</p>
+          <p class="slide__description">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Praesent vitae eros
+            eget tellus tristique bibendum. Donec rutrum sed sem quis venenatis. Proin viverra risus a eros volutpat
+            tempor. In quis arcu et eros porta lobortis sit.</p>
+          <div class="slide__image"><img src="assets/img/slide-image-3.png" alt="alt"></div>
+          <ul class="slide__brands">
+            <li><a href="#"><i class="fa fa-apple"></i></a></li>
+            <li><a href="#"><i class="fa fa-android"></i></a></li>
+            <li><a href="#"><i class="fa fa-windows"></i></a></li>
+          </ul>
+        </div>
+      </div>
+
+      <!-- ul.indicators>li.indaicator[data-slide-to=0]*3 -->
+      <ul class="indicators">
+        <li class="indaicator active" data-slide-to="0"></li>
+        <li class="indaicator" data-slide-to="1"></li>
+        <li class="indaicator" data-slide-to="2"></li>
+      </ul>
+    </div>
+
+  </header>
+
+
+  <script src="libs/jquery/dist/jquery.min.js"></script>
+  <!--<script src="assets/js/main.js"></script>-->
+</body>
+
+</html>
