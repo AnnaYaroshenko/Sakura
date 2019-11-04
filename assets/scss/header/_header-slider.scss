@@ -1,0 +1,147 @@
+.header-slider {
+  overflow: hidden;
+
+  @include md-min {
+    grid-template-rows: minmax(500px, max-content) 100px; // 500 - сам слайдер, 100 - индикаторы
+  }
+
+  @include md {
+    grid-template-rows: minmax(300, max-content) 80; // 300 - сам слайдер, 80 - индикаторы
+  }
+}
+
+.slides {
+  position: relative;
+  padding-top: 20px;
+}
+
+.slide {
+  position: absolute;
+  z-index: -1;
+  top: 0;
+  left: 0;
+  transform: translateX(100vw);
+  transition: transform 0.5s;
+
+  display: grid;
+  grid-template-rows: minmax(106px, max-content) auto 1fr auto; // сделали чтобы dsc занимал все свободное место по вертикали
+  // 106 пикс под заголовок на две строки, минимально 106, максимально - по контенту
+  grid-row-gap: $gap; // отступы по вертикали
+
+  @include lg-min {
+    grid-template-columns: 1fr auto; // две колонки все что осталось + размер картинки
+    grid-column-gap: 180px;
+    grid-template-areas: "ttl img" "stl img" "dsc img" "brd img";
+  }
+
+  @include lg-md {
+    grid-template-columns: 1fr auto; // две колонки все что осталось + размер картинки
+    grid-column-gap: 60px;
+    grid-template-areas: "ttl img" "stl img" "dsc img" "brd img";
+  }
+
+  @include md-sm {
+    grid-template-columns: 1fr 1fr; // две колонки все что осталось + размер картинки
+    grid-column-gap: 40px;
+    grid-template-areas: "ttl img" "stl img" "dsc img" "brd img";
+  }
+
+  @include sm {
+    grid-template-columns: 1fr 1fr; // две колонки все что осталось + размер картинки
+    grid-column-gap: 20px;
+    grid-template-areas: "ttl ttl" "stl stl" "dsc img" "brd brd";
+  }
+
+  // используем класс bootstrap-а - moved
+  &.moved {
+    z-index: 1;
+    transform: translateX(-100vw); // слайд уходит вправо
+  }
+
+  // слайд активный
+  &.active {
+    position: relative;
+    z-index: 1;
+    transform: translateX(0);
+  }
+
+  &__title {
+    grid-area: ttl;
+    margin: 0;
+    font-size: 2rem;
+    align-self: end; // текст заголовка прижали вниз
+  }
+
+  &__subtitle {
+    grid-area: stl;
+    margin: 0;
+    font-size: 1.25rem;
+  }
+
+  &__description {
+    grid-area: dsc;
+    margin: 0;
+    color: $color-gray;
+    line-height: 1.25;
+  }
+
+  &__brands {
+    grid-area: brd;
+    display: flex;
+    @include unlist(($gap * 0.85) 0 4px); // 0 - сверху слева справа, 4 - снизу
+
+    @include sm {
+      justify-content: center;
+    }
+
+    li:not(:last-of-type) {
+      margin-right: $gap * 1.75;
+    }
+
+    i {
+      font-size: 2.75rem;
+    }
+
+    a {
+      &:hover,
+      &:focus {
+        text-shadow: 0 0 15px $color-light;
+      }
+    }
+  }
+
+  &__image {
+    grid-area: img;
+    padding-top: 4px;
+
+    @include md-min {
+      margin-right: $gap * 1.5;
+    }
+
+    @include md {
+      max-width: 100%;
+    }
+  }
+}
+
+.indicators {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  @include unlist;
+}
+
+.indicator {
+  width: $gap * 0.75;
+  height: $gap * 0.75;
+  margin: -9px 3px 0;
+  border-radius: $gap * 0.375; // сделали из квадратов кружки, border-radius в половинном размере от исходного
+  background-color: $color-light;
+  opacity: 0.5;
+  cursor: pointer;
+
+  &.active {
+    opacity: 1;
+  }
+}
